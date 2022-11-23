@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7480ACF8292D4BD8007068AA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480ACF6292D4BD8007068AA /* CollectionViewCell.swift */; };
+		7480ACF8292D4BD8007068AA /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */; };
 		7480ACF9292D4BD8007068AA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7480ACF7292D4BD8007068AA /* CollectionViewCell.xib */; };
 		7480ACFC292D5348007068AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7480ACFB292D5348007068AA /* Kingfisher */; };
 		74A0DCD5292C2297000CFEDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0DCD4292C2297000CFEDE /* AppDelegate.swift */; };
@@ -22,10 +22,14 @@
 		74A0DCF2292C26CD000CFEDE /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0DCF1292C26CD000CFEDE /* CharacterModel.swift */; };
 		74A0DCF4292C280D000CFEDE /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0DCF3292C280D000CFEDE /* ErrorModel.swift */; };
 		74A0DCF6292C2B84000CFEDE /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0DCF5292C2B84000CFEDE /* QuoteModel.swift */; };
+		74D15118292E8EB700292C31 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D15117292E8EB700292C31 /* CharacterDetailViewController.swift */; };
+		74D1511B292EA7E900292C31 /* QuoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D15119292EA7E900292C31 /* QuoteViewCell.swift */; };
+		74D1511C292EA7E900292C31 /* QuoteViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D1511A292EA7E900292C31 /* QuoteViewCell.xib */; };
+		74D1511E292EAA3D00292C31 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1511D292EAA3D00292C31 /* QuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7480ACF6292D4BD8007068AA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 		7480ACF7292D4BD8007068AA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		74A0DCD1292C2297000CFEDE /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A0DCD4292C2297000CFEDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,10 @@
 		74A0DCF1292C26CD000CFEDE /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		74A0DCF3292C280D000CFEDE /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		74A0DCF5292C2B84000CFEDE /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		74D15117292E8EB700292C31 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		74D15119292EA7E900292C31 /* QuoteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewCell.swift; sourceTree = "<group>"; };
+		74D1511A292EA7E900292C31 /* QuoteViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteViewCell.xib; sourceTree = "<group>"; };
+		74D1511D292EAA3D00292C31 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +66,10 @@
 		7480ACF5292D4BB3007068AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7480ACF6292D4BD8007068AA /* CollectionViewCell.swift */,
+				7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */,
 				7480ACF7292D4BD8007068AA /* CollectionViewCell.xib */,
+				74D15119292EA7E900292C31 /* QuoteViewCell.swift */,
+				74D1511A292EA7E900292C31 /* QuoteViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -121,6 +131,8 @@
 				74A0DCD8292C2297000CFEDE /* CharactersViewController.swift */,
 				74A0DCE8292C24B2000CFEDE /* EpisodesViewController.swift */,
 				74A0DCEA292C24C1000CFEDE /* IMDBViewController.swift */,
+				74D15117292E8EB700292C31 /* CharacterDetailViewController.swift */,
+				74D1511D292EAA3D00292C31 /* QuoteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 				74A0DCDE292C2297000CFEDE /* Assets.xcassets in Resources */,
 				7480ACF9292D4BD8007068AA /* CollectionViewCell.xib in Resources */,
 				74A0DCDC292C2297000CFEDE /* Main.storyboard in Resources */,
+				74D1511C292EA7E900292C31 /* QuoteViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7480ACF8292D4BD8007068AA /* CollectionViewCell.swift in Sources */,
+				74D1511E292EAA3D00292C31 /* QuoteViewController.swift in Sources */,
+				74D15118292E8EB700292C31 /* CharacterDetailViewController.swift in Sources */,
+				7480ACF8292D4BD8007068AA /* CharacterViewCell.swift in Sources */,
 				74A0DCF0292C24FA000CFEDE /* NetworkManager.swift in Sources */,
 				74A0DCD9292C2297000CFEDE /* CharactersViewController.swift in Sources */,
 				74A0DCD5292C2297000CFEDE /* AppDelegate.swift in Sources */,
@@ -213,6 +228,7 @@
 				74A0DCF6292C2B84000CFEDE /* QuoteModel.swift in Sources */,
 				74A0DCF4292C280D000CFEDE /* ErrorModel.swift in Sources */,
 				74A0DCEB292C24C1000CFEDE /* IMDBViewController.swift in Sources */,
+				74D1511B292EA7E900292C31 /* QuoteViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

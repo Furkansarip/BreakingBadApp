@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class CharacterViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var characterNameLabel: UILabel!
@@ -16,6 +16,10 @@ class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        characterNameLabel.numberOfLines = 0
+        characterNameLabel.adjustsFontSizeToFitWidth = true
+        characterNameLabel.minimumScaleFactor = 0.5
+        characterNameLabel.sizeToFit()
         nicknameLabel.textColor = .white
         characterNameLabel.textColor = .white
         birthdayLabel.textColor = .white
