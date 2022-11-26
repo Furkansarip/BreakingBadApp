@@ -11,6 +11,7 @@ class EpisodesViewController: UIViewController {
 
     @IBOutlet weak var episodesTableView: UITableView!
     var episodeArray = [EpisodesModel]()
+    var characterPopUp : EpisodeDetails!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,8 +99,20 @@ extension EpisodesViewController : UITableViewDelegate,UITableViewDataSource {
         return cell
         
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.characterPopUp = EpisodeDetails(frame: self.view.frame)
+        self.view.addSubview(characterPopUp)
+        self.characterPopUp.delegate = self
         
+    }
+    
+}
+
+extension EpisodesViewController : CloseDelegate {
+    func closeButton() {
+        print("Close Delegate triggered!")
     }
     
     

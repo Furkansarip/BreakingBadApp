@@ -10,16 +10,49 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodeDetails" customModule="BreakingBadApp" customModuleProvider="target">
             <connections>
-                <outlet property="parentView" destination="iN0-l3-epB" id="0bE-1I-Yt1"/>
+                <outlet property="tableView" destination="aAl-qF-uKc" id="prw-Dc-mdo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="528"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EpisodeDetails" customModule="BreakingBadApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glS-jV-fqg">
+                    <rect key="frame" x="43.666666666666657" y="259" width="303" height="326"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aAl-qF-uKc">
+                            <rect key="frame" x="0.0" y="55" width="303" height="271"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-iQ-jwv">
+                            <rect key="frame" x="267.66666666666663" y="0.0" width="35.333333333333314" height="35"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="X"/>
+                            <connections>
+                                <action selector="closeButton:" destination="-1" eventType="touchUpInside" id="W95-g7-oei"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="aAl-qF-uKc" firstAttribute="leading" secondItem="glS-jV-fqg" secondAttribute="leading" id="85b-bh-lMb"/>
+                        <constraint firstItem="K7o-iQ-jwv" firstAttribute="top" secondItem="glS-jV-fqg" secondAttribute="top" id="K5n-jg-A8k"/>
+                        <constraint firstAttribute="width" constant="303" id="Sbw-Xt-09f"/>
+                        <constraint firstAttribute="height" constant="326" id="dV7-zv-cxR"/>
+                        <constraint firstAttribute="bottom" secondItem="aAl-qF-uKc" secondAttribute="bottom" id="h2G-fx-FtJ"/>
+                        <constraint firstItem="aAl-qF-uKc" firstAttribute="top" secondItem="K7o-iQ-jwv" secondAttribute="bottom" constant="20" id="rAd-c3-lKX"/>
+                        <constraint firstAttribute="trailing" secondItem="aAl-qF-uKc" secondAttribute="trailing" id="rIb-nW-qgg"/>
+                        <constraint firstAttribute="trailing" secondItem="K7o-iQ-jwv" secondAttribute="trailing" id="y1I-ms-Mbw"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="glS-jV-fqg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UQE-96-vHh"/>
+                <constraint firstItem="glS-jV-fqg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eXK-YW-8uB"/>
+            </constraints>
             <point key="canvasLocation" x="129.23076923076923" y="-91.706161137440759"/>
         </view>
     </objects>

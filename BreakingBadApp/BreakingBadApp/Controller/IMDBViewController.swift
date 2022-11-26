@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import WebKit
 
-class IMDBViewController: UIViewController {
+class IMDBViewController: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let urlString = "https://www.imdb.com/title/tt0903747/"
+        if let url = URL(string: urlString) {
+            webView.navigationDelegate = self
+            webView.load(URLRequest(url: url))
+        }
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+                toolbarItems = [refresh]
+                navigationController?.isToolbarHidden = false
     }
     
-
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+           
+        }
     
 
 }

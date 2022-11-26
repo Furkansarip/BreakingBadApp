@@ -210,10 +210,29 @@
                     <view key="view" contentMode="scaleToFill" id="mwm-GC-RZM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIs-UZ-EhB">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4Hx-kt-4yY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Hx-kt-4yY" firstAttribute="trailing" secondItem="yIs-UZ-EhB" secondAttribute="trailing" id="6Ff-fR-huX"/>
+                            <constraint firstItem="yIs-UZ-EhB" firstAttribute="leading" secondItem="4Hx-kt-4yY" secondAttribute="leading" id="Iwu-5v-s1y"/>
+                            <constraint firstItem="yIs-UZ-EhB" firstAttribute="top" secondItem="4Hx-kt-4yY" secondAttribute="top" id="t4h-D1-mEC"/>
+                            <constraint firstItem="4Hx-kt-4yY" firstAttribute="bottom" secondItem="yIs-UZ-EhB" secondAttribute="bottom" id="wNr-pL-8vW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="IMDB" image="network" catalog="system" id="BDd-jx-rr7"/>
+                    <connections>
+                        <outlet property="webView" destination="yIs-UZ-EhB" id="3hV-KY-eN0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRa-Hf-VGm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
