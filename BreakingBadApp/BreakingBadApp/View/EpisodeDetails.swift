@@ -15,6 +15,7 @@ class EpisodeDetails: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     var delegate : CloseDelegate?
+    var characterArray = [String]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,18 +50,25 @@ class EpisodeDetails: UIView {
 
 extension EpisodeDetails : UITableViewDelegate,UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Characters in Episode"
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return characterArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "hello"
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = randomColor()
+        cell.textLabel?.text = characterArray[indexPath.row]
+        
         return cell
+    }
+    
+    func randomColor()->UIColor {
+        let red = CGFloat(drand48())
+        let blue = CGFloat(drand48())
+        let green = CGFloat(drand48())
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
     
     

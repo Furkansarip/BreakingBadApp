@@ -32,6 +32,7 @@
 		74D1511B292EA7E900292C31 /* QuoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D15119292EA7E900292C31 /* QuoteViewCell.swift */; };
 		74D1511C292EA7E900292C31 /* QuoteViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D1511A292EA7E900292C31 /* QuoteViewCell.xib */; };
 		74D1511E292EAA3D00292C31 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1511D292EAA3D00292C31 /* QuoteViewController.swift */; };
+		74ED34052932973400D9CAD0 /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 74ED34042932973400D9CAD0 /* MaterialActivityIndicator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74ED34052932973400D9CAD0 /* MaterialActivityIndicator in Frameworks */,
 				7480ACFC292D5348007068AA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +183,7 @@
 			name = BreakingBadApp;
 			packageProductDependencies = (
 				7480ACFB292D5348007068AA /* Kingfisher */,
+				74ED34042932973400D9CAD0 /* MaterialActivityIndicator */,
 			);
 			productName = BreakingBadApp;
 			productReference = 74A0DCD1292C2297000CFEDE /* BreakingBadApp.app */;
@@ -212,6 +215,7 @@
 			mainGroup = 74A0DCC8292C2296000CFEDE;
 			packageReferences = (
 				7480ACFA292D5348007068AA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				74ED34032932973400D9CAD0 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */,
 			);
 			productRefGroup = 74A0DCD2292C2297000CFEDE /* Products */;
 			projectDirPath = "";
@@ -486,6 +490,14 @@
 				kind = branch;
 			};
 		};
+		74ED34032932973400D9CAD0 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nspavlo/MaterialActivityIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -493,6 +505,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7480ACFA292D5348007068AA /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		74ED34042932973400D9CAD0 /* MaterialActivityIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74ED34032932973400D9CAD0 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */;
+			productName = MaterialActivityIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

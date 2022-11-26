@@ -7,8 +7,10 @@
 
 import UIKit
 import Kingfisher
+import MaterialActivityIndicator
 
 final class CharactersViewController: UIViewController {
+    let indicator = MaterialActivityIndicatorView()
     private var characterArray = [CharacterModel]()
     var status = ""
     var nickname = ""
@@ -18,12 +20,22 @@ final class CharactersViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        indicator.startAnimating()
+        indicatorSetup()
         getAllCharacters()
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CharacterCell")
+        
+    }
+    
+    func indicatorSetup(){
+        view.addSubview(indicator)
+        indicator.color = .green
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
     }
     func getAllCharacters(){
@@ -34,6 +46,8 @@ final class CharactersViewController: UIViewController {
                  self.characterArray = characters
                  DispatchQueue.main.async {
                      self.collectionView.reloadData()
+                     self.indicator.stopAnimating()
+                     
                  }
              case .failure(let error):
                  print(error)

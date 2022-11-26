@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import MaterialActivityIndicator
 
-class EpisodesViewController: UIViewController {
+final class EpisodesViewController: UIViewController {
 
+    let indicator = MaterialActivityIndicatorView()
     @IBOutlet weak var episodesTableView: UITableView!
     var episodeArray = [EpisodesModel]()
     var characterPopUp : EpisodeDetails!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         episodesTableView.delegate = self
         episodesTableView.dataSource = self
         episodesTableView.register(UINib(nibName: "EpisodeViewCell", bundle: nil), forCellReuseIdentifier: "EpisodeCell")
@@ -24,6 +26,7 @@ class EpisodesViewController: UIViewController {
                 self.episodeArray = episodes
                 DispatchQueue.main.async {
                     self.episodesTableView.reloadData()
+                    self.indicator.stopAnimating()
                 }
                 //print(self.episodeArray)
             case .failure(let error):
@@ -32,9 +35,18 @@ class EpisodesViewController: UIViewController {
         }
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
-        episodesTableView.reloadData()
+        indicatorSetup()
+        indicator.startAnimating()
+    }
+    
+    func indicatorSetup(){
+        view.addSubview(indicator)
+        indicator.color = .green
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
     }
 }
 
@@ -99,12 +111,15 @@ extension EpisodesViewController : UITableViewDelegate,UITableViewDataSource {
         return cell
         
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         self.characterPopUp = EpisodeDetails(frame: self.view.frame)
         self.view.addSubview(characterPopUp)
         self.characterPopUp.delegate = self
+        self.characterPopUp.characterArray = episodeArray[indexPath.row].characters
         
     }
     

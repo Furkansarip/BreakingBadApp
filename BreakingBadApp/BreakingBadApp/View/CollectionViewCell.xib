@@ -53,7 +53,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+            <color key="backgroundColor" systemColor="systemGreenColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2mI-02-4u9" secondAttribute="trailing" constant="5" id="23R-QN-qlA"/>
                 <constraint firstItem="8f1-aO-EDC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="5PG-Ha-NLi"/>
@@ -81,8 +81,8 @@
     </objects>
     <resources>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
