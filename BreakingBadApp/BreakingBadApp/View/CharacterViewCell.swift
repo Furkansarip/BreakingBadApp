@@ -20,9 +20,9 @@ class CharacterViewCell: UICollectionViewCell {
         characterNameLabel.adjustsFontSizeToFitWidth = true
         characterNameLabel.minimumScaleFactor = 0.5
         characterNameLabel.sizeToFit()
-        nicknameLabel.textColor = .white
-        characterNameLabel.textColor = .white
-        birthdayLabel.textColor = .white
+        nicknameLabel.textColor = .black
+        characterNameLabel.textColor = .black
+        birthdayLabel.textColor = .black
         self.layer.cornerRadius = CGFloat(20)
         self.imageView.layer.cornerRadius = CGFloat(30)
         self.imageView.layer.borderWidth = CGFloat(1)

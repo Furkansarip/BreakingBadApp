@@ -19,12 +19,10 @@ final class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       getAllCharacters()
+        getAllCharacters()
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        let lay = UICollectionViewFlowLayout()
-        lay.itemSize = CGSize(width: 120, height: 120)
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CharacterCell")
         
     }
