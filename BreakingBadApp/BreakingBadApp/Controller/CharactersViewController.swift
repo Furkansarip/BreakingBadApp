@@ -8,10 +8,13 @@
 import UIKit
 import Kingfisher
 import MaterialActivityIndicator
+import SwiftAlertView
 
 final class CharactersViewController: UIViewController {
     let indicator = MaterialActivityIndicatorView()
+    
     private var characterArray = [CharacterModel]()
+    //CharacterDetail sayfasına gidicek değerler için oluşturulmuş değişkenler
     var status = ""
     var nickname = ""
     var name = ""
@@ -20,9 +23,12 @@ final class CharactersViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       /* SwiftAlertView.show(title: "Welcome",message:"Breaking Bad App ",buttonTitles: "OK") {
+            $0.style = .dark
+        }*/
         indicator.startAnimating()
         indicatorSetup()
-        getAllCharacters()
+        getAllCharacters()//Network işlemimiz
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -87,7 +93,7 @@ extension CharactersViewController : UICollectionViewDelegate,UICollectionViewDa
         performSegue(withIdentifier: "characterDetail", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {//Detail ekranına veriler gitmeden önce ayarlamaları yapıyoruz.
         let destination = segue.destination as! CharacterDetailViewController
         destination.name = name
         destination.nickname = nickname

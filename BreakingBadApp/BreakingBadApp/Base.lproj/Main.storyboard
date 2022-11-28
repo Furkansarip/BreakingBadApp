@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086.2595419847328" y="359.85915492957747"/>
+            <point key="canvasLocation" x="2012.9770992366412" y="359.85915492957747"/>
         </scene>
         <!--Character Detail View Controller-->
         <scene sceneID="e1u-Ns-Ozx">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aE1-57-ESe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860.3053435114502" y="359.85915492957747"/>
+            <point key="canvasLocation" x="2787.0229007633588" y="359.85915492957747"/>
         </scene>
         <!--Name + Quotes-->
         <scene sceneID="30s-6O-DZe">
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgO-aO-ANE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2653" y="360"/>
+            <point key="canvasLocation" x="3579.3893129770991" y="359.85915492957747"/>
         </scene>
         <!--IMDB-->
         <scene sceneID="xuH-LA-3Fx">
@@ -315,11 +315,106 @@
                         <segue destination="4M5-pu-jKP" kind="relationship" relationship="viewControllers" id="Q5Q-oe-yLG"/>
                         <segue destination="f72-5q-3Hs" kind="relationship" relationship="viewControllers" id="nzL-Va-kQB"/>
                         <segue destination="MKU-nI-X0U" kind="relationship" relationship="viewControllers" id="sUZ-fB-OSf"/>
+                        <segue destination="Z1w-GJ-VnV" kind="relationship" relationship="viewControllers" id="hRa-fH-Vwj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVk-Qz-ZeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-726" y="635"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="LlB-vS-2me">
+            <objects>
+                <viewController id="OtG-2y-5Vn" customClass="NotesViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r6q-By-lnY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="27l-HH-80B">
+                                <rect key="frame" x="0.0" y="103" width="393" height="581"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pqz-17-uCw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pqz-17-uCw" firstAttribute="bottom" secondItem="27l-HH-80B" secondAttribute="bottom" constant="85" id="Llg-en-gVv"/>
+                            <constraint firstItem="27l-HH-80B" firstAttribute="leading" secondItem="Pqz-17-uCw" secondAttribute="leading" id="u2C-7Y-DcR"/>
+                            <constraint firstItem="Pqz-17-uCw" firstAttribute="trailing" secondItem="27l-HH-80B" secondAttribute="trailing" id="xXc-uY-2pg"/>
+                            <constraint firstItem="27l-HH-80B" firstAttribute="top" secondItem="Pqz-17-uCw" secondAttribute="top" id="yHq-Ly-Y9C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notes" id="DoU-lj-hSn"/>
+                    <connections>
+                        <outlet property="noteTableView" destination="27l-HH-80B" id="iKS-SS-NXL"/>
+                        <segue destination="F6f-Bq-Gfs" kind="show" identifier="addNote" id="RqA-IA-cuY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kc6-XW-s9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191.6030534351145" y="-30.281690140845072"/>
+        </scene>
+        <!--Create a Note-->
+        <scene sceneID="w0Y-Op-44L">
+            <objects>
+                <viewController id="F6f-Bq-Gfs" customClass="AddNoteViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nau-Ia-Hvk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="DlH-af-xcj">
+                                <rect key="frame" x="21.666666666666657" y="322" width="350" height="208"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Season" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-g7-Ez5">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Episode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-7u-XXd">
+                                        <rect key="frame" x="0.0" y="64" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-aA-Hep">
+                                        <rect key="frame" x="0.0" y="128" width="350" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="Yef-Iu-XX6"/>
+                                            <constraint firstAttribute="height" constant="80" id="aLr-11-uAo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi2-1z-WCR">
+                                <rect key="frame" x="133" y="588" width="126" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="9ai-UZ-HFl"/>
+                                    <constraint firstAttribute="height" constant="55" id="fxm-Zi-VcS"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="note.text.badge.plus" catalog="system" title="Add Note" imagePadding="9"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VuH-Zi-ecD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VuH-Zi-ecD" firstAttribute="trailing" secondItem="Xi2-1z-WCR" secondAttribute="trailing" constant="134" id="4Ct-1K-2Lx"/>
+                            <constraint firstItem="Xi2-1z-WCR" firstAttribute="top" secondItem="DlH-af-xcj" secondAttribute="bottom" constant="58" id="4YF-24-jek"/>
+                            <constraint firstItem="DlH-af-xcj" firstAttribute="centerX" secondItem="Nau-Ia-Hvk" secondAttribute="centerX" id="6JZ-y4-POY"/>
+                            <constraint firstItem="DlH-af-xcj" firstAttribute="centerY" secondItem="Nau-Ia-Hvk" secondAttribute="centerY" id="Pf5-Mu-iyP"/>
+                            <constraint firstItem="Xi2-1z-WCR" firstAttribute="leading" secondItem="VuH-Zi-ecD" secondAttribute="leading" constant="133" id="ZND-1l-8Fo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a Note" id="mY0-qH-byf"/>
+                    <connections>
+                        <outlet property="addNoteButton" destination="Xi2-1z-WCR" id="8k0-Yy-dTa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTf-Ua-5FT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026.7175572519084" y="-30.281690140845072"/>
         </scene>
         <!--Characters-->
         <scene sceneID="nL7-z8-XiT">
@@ -338,11 +433,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwZ-UM-FiA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159.54198473282443" y="359.85915492957747"/>
+            <point key="canvasLocation" x="1091" y="614"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="utr-8z-dZ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z1w-GJ-VnV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notes" selectedImage="note.text.badge.plus" catalog="system" id="LHN-Hz-TDl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9J4-z0-aaQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OtG-2y-5Vn" kind="relationship" relationship="rootViewController" id="vE6-te-1Uf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVU-tF-jG2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735.1145038167939" y="-30.281690140845072"/>
         </scene>
     </scenes>
     <resources>
         <image name="network" catalog="system" width="128" height="123"/>
+        <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <image name="person.and.person.fill" catalog="system" width="128" height="81"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
@@ -350,6 +465,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

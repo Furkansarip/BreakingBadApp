@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74486D9329353FDC009DB2A6 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74486D9229353FDC009DB2A6 /* NotesViewController.swift */; };
+		74486D9529354800009DB2A6 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74486D9429354800009DB2A6 /* AddNoteViewController.swift */; };
 		7480ACF8292D4BD8007068AA /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */; };
 		7480ACF9292D4BD8007068AA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7480ACF7292D4BD8007068AA /* CollectionViewCell.xib */; };
 		7480ACFC292D5348007068AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7480ACFB292D5348007068AA /* Kingfisher */; };
@@ -33,9 +35,12 @@
 		74D1511C292EA7E900292C31 /* QuoteViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D1511A292EA7E900292C31 /* QuoteViewCell.xib */; };
 		74D1511E292EAA3D00292C31 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1511D292EAA3D00292C31 /* QuoteViewController.swift */; };
 		74ED34052932973400D9CAD0 /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 74ED34042932973400D9CAD0 /* MaterialActivityIndicator */; };
+		74ED34082932BD0500D9CAD0 /* SwiftAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 74ED34072932BD0500D9CAD0 /* SwiftAlertView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74486D9229353FDC009DB2A6 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		74486D9429354800009DB2A6 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 		7480ACF7292D4BD8007068AA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		7491361529321AD70020785E /* EpisodesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesModel.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74ED34082932BD0500D9CAD0 /* SwiftAlertView in Frameworks */,
 				74ED34052932973400D9CAD0 /* MaterialActivityIndicator in Frameworks */,
 				7480ACFC292D5348007068AA /* Kingfisher in Frameworks */,
 			);
@@ -161,6 +167,8 @@
 				74A0DCEA292C24C1000CFEDE /* IMDBViewController.swift */,
 				74D15117292E8EB700292C31 /* CharacterDetailViewController.swift */,
 				74D1511D292EAA3D00292C31 /* QuoteViewController.swift */,
+				74486D9229353FDC009DB2A6 /* NotesViewController.swift */,
+				74486D9429354800009DB2A6 /* AddNoteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 			packageProductDependencies = (
 				7480ACFB292D5348007068AA /* Kingfisher */,
 				74ED34042932973400D9CAD0 /* MaterialActivityIndicator */,
+				74ED34072932BD0500D9CAD0 /* SwiftAlertView */,
 			);
 			productName = BreakingBadApp;
 			productReference = 74A0DCD1292C2297000CFEDE /* BreakingBadApp.app */;
@@ -216,6 +225,7 @@
 			packageReferences = (
 				7480ACFA292D5348007068AA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				74ED34032932973400D9CAD0 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */,
+				74ED34062932BD0500D9CAD0 /* XCRemoteSwiftPackageReference "SwiftAlertView" */,
 			);
 			productRefGroup = 74A0DCD2292C2297000CFEDE /* Products */;
 			projectDirPath = "";
@@ -252,6 +262,7 @@
 				7491362529324DFF0020785E /* EpisodeDetails.swift in Sources */,
 				74D15118292E8EB700292C31 /* CharacterDetailViewController.swift in Sources */,
 				7480ACF8292D4BD8007068AA /* CharacterViewCell.swift in Sources */,
+				74486D9329353FDC009DB2A6 /* NotesViewController.swift in Sources */,
 				74A0DCF0292C24FA000CFEDE /* NetworkManager.swift in Sources */,
 				7491361C293224330020785E /* EpisodeViewCell.swift in Sources */,
 				74A0DCD9292C2297000CFEDE /* CharactersViewController.swift in Sources */,
@@ -261,6 +272,7 @@
 				74A0DCF2292C26CD000CFEDE /* CharacterModel.swift in Sources */,
 				74A0DCF6292C2B84000CFEDE /* QuoteModel.swift in Sources */,
 				74A0DCF4292C280D000CFEDE /* ErrorModel.swift in Sources */,
+				74486D9529354800009DB2A6 /* AddNoteViewController.swift in Sources */,
 				74913619293221510020785E /* SectionType.swift in Sources */,
 				74A0DCEB292C24C1000CFEDE /* IMDBViewController.swift in Sources */,
 				74D1511B292EA7E900292C31 /* QuoteViewCell.swift in Sources */,
@@ -498,6 +510,14 @@
 				minimumVersion = 0.0.7;
 			};
 		};
+		74ED34062932BD0500D9CAD0 /* XCRemoteSwiftPackageReference "SwiftAlertView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dinhquan/SwiftAlertView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +530,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74ED34032932973400D9CAD0 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */;
 			productName = MaterialActivityIndicator;
+		};
+		74ED34072932BD0500D9CAD0 /* SwiftAlertView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74ED34062932BD0500D9CAD0 /* XCRemoteSwiftPackageReference "SwiftAlertView" */;
+			productName = SwiftAlertView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

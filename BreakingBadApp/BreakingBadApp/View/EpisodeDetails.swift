@@ -13,10 +13,11 @@ protocol CloseDelegate {
 
 class EpisodeDetails: UIView {
     
+    @IBOutlet weak var characterListLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var delegate : CloseDelegate?
     var characterArray = [String]()
-    
+    var selectedEpisode = ""
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
@@ -32,6 +33,7 @@ class EpisodeDetails: UIView {
         addSubview(view)
         tableView.delegate = self
         tableView.dataSource = self
+        characterListLabel.text = "\(selectedEpisode)Characters List"
     }
     
     func loadXib() -> UIView{

@@ -117,10 +117,11 @@ extension EpisodesViewController : UITableViewDelegate,UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         self.characterPopUp = EpisodeDetails(frame: self.view.frame)
+        self.characterPopUp.selectedEpisode = episodeArray[indexPath.row].title
         self.view.addSubview(characterPopUp)
         self.characterPopUp.delegate = self
         self.characterPopUp.characterArray = episodeArray[indexPath.row].characters
-        
+       
     }
     
 }

@@ -15,7 +15,7 @@ class QuoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "\(name) Quotes"
-        let splitValue = name.split(separator: " ")
+        let splitValue = name.split(separator: " ")//Apide author kısmı Walter+White şeklinde olduğu için aşağıdaki gibi işlemden geçirdim.
         var formatValue = ""
         for i in splitValue {
             formatValue += "\(i)+"
@@ -32,7 +32,7 @@ class QuoteViewController: UIViewController {
         collectionView.register(UINib(nibName: "QuoteViewCell", bundle: nil), forCellWithReuseIdentifier: "QuoteCell")
     }
     
-    func getQuote(author:String){
+    func getQuote(author:String){//Sözün sahibine göre gerekli veri geliyor.
         NetworkManager.shared.getCharacterQuote(author: author) { [weak self] result in
             guard let self = self else { return }
             switch result {
