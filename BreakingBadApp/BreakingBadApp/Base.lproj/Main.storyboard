@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-S8-uwc">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Rb-ze-W0O">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="height" constant="42" id="AcG-yr-dyK"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Quote Screen"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="quote.bubble" catalog="system" title="Quote Screen" imagePadding="5"/>
                                 <connections>
                                     <action selector="getQuote" destination="I4o-H8-U1G" eventType="touchUpInside" id="pka-Mi-Sbj"/>
                                 </connections>
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJP-fT-iE4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="1034"/>
+            <point key="canvasLocation" x="56" y="1206"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WZz-SL-O7C">
@@ -322,6 +322,22 @@
             </objects>
             <point key="canvasLocation" x="-726" y="635"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ehS-fe-Gvk">
+            <objects>
+                <viewController id="B25-Qm-ABQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aLX-Xc-WJc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GEs-sF-4cI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W46-bP-AlY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10W-sN-Da1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="327"/>
+        </scene>
         <!--Notes-->
         <scene sceneID="LlB-vS-2me">
             <objects>
@@ -348,11 +364,12 @@
                     <connections>
                         <outlet property="noteTableView" destination="27l-HH-80B" id="iKS-SS-NXL"/>
                         <segue destination="F6f-Bq-Gfs" kind="show" identifier="addNote" id="RqA-IA-cuY"/>
+                        <segue destination="B25-Qm-ABQ" kind="show" identifier="noteDetail" id="pV6-nk-5wM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc6-XW-s9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191.6030534351145" y="-30.281690140845072"/>
+            <point key="canvasLocation" x="132" y="-323"/>
         </scene>
         <!--Create a Note-->
         <scene sceneID="w0Y-Op-44L">
@@ -363,33 +380,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="DlH-af-xcj">
-                                <rect key="frame" x="21.666666666666657" y="322" width="350" height="208"/>
+                                <rect key="frame" x="20" y="322" width="353" height="208"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Season" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-g7-Ez5">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Episode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-7u-XXd">
-                                        <rect key="frame" x="0.0" y="64" width="350" height="34"/>
+                                        <rect key="frame" x="0.0" y="64" width="353" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-aA-Hep">
-                                        <rect key="frame" x="0.0" y="128" width="350" height="80"/>
+                                        <rect key="frame" x="0.0" y="128" width="353" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="Yef-Iu-XX6"/>
                                             <constraint firstAttribute="height" constant="80" id="aLr-11-uAo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ew9-aA-Hep" firstAttribute="top" secondItem="cHA-7u-XXd" secondAttribute="bottom" constant="30" id="59G-v1-NVa"/>
+                                    <constraint firstAttribute="trailing" secondItem="ew9-aA-Hep" secondAttribute="trailing" id="Axh-f6-pbb"/>
+                                    <constraint firstItem="PQO-g7-Ez5" firstAttribute="leading" secondItem="DlH-af-xcj" secondAttribute="leading" id="CRl-kv-PnM"/>
+                                    <constraint firstAttribute="trailing" secondItem="PQO-g7-Ez5" secondAttribute="trailing" id="Rrn-XX-wIu"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHA-7u-XXd" secondAttribute="trailing" id="Ti7-zO-QQr"/>
+                                    <constraint firstItem="ew9-aA-Hep" firstAttribute="leading" secondItem="DlH-af-xcj" secondAttribute="leading" id="YoN-nJ-7zk"/>
+                                    <constraint firstItem="cHA-7u-XXd" firstAttribute="leading" secondItem="DlH-af-xcj" secondAttribute="leading" id="ZF7-rt-ZFM"/>
+                                    <constraint firstItem="PQO-g7-Ez5" firstAttribute="top" secondItem="DlH-af-xcj" secondAttribute="top" id="pKZ-O9-Mmm"/>
+                                    <constraint firstItem="cHA-7u-XXd" firstAttribute="top" secondItem="PQO-g7-Ez5" secondAttribute="bottom" constant="30" id="w5v-J9-7AK"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi2-1z-WCR">
                                 <rect key="frame" x="133" y="588" width="126" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="126" id="9ai-UZ-HFl"/>
                                     <constraint firstAttribute="height" constant="55" id="fxm-Zi-VcS"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
@@ -403,8 +429,10 @@
                             <constraint firstItem="VuH-Zi-ecD" firstAttribute="trailing" secondItem="Xi2-1z-WCR" secondAttribute="trailing" constant="134" id="4Ct-1K-2Lx"/>
                             <constraint firstItem="Xi2-1z-WCR" firstAttribute="top" secondItem="DlH-af-xcj" secondAttribute="bottom" constant="58" id="4YF-24-jek"/>
                             <constraint firstItem="DlH-af-xcj" firstAttribute="centerX" secondItem="Nau-Ia-Hvk" secondAttribute="centerX" id="6JZ-y4-POY"/>
+                            <constraint firstItem="DlH-af-xcj" firstAttribute="leading" secondItem="VuH-Zi-ecD" secondAttribute="leading" constant="20" id="IDM-1n-ZXs"/>
                             <constraint firstItem="DlH-af-xcj" firstAttribute="centerY" secondItem="Nau-Ia-Hvk" secondAttribute="centerY" id="Pf5-Mu-iyP"/>
                             <constraint firstItem="Xi2-1z-WCR" firstAttribute="leading" secondItem="VuH-Zi-ecD" secondAttribute="leading" constant="133" id="ZND-1l-8Fo"/>
+                            <constraint firstItem="VuH-Zi-ecD" firstAttribute="trailing" secondItem="DlH-af-xcj" secondAttribute="trailing" constant="20" id="baB-oV-uiE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Note" id="mY0-qH-byf"/>
@@ -414,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTf-Ua-5FT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026.7175572519084" y="-30.281690140845072"/>
+            <point key="canvasLocation" x="1091" y="-30"/>
         </scene>
         <!--Characters-->
         <scene sceneID="nL7-z8-XiT">
@@ -433,7 +461,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwZ-UM-FiA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="614"/>
+            <point key="canvasLocation" x="1091" y="635"/>
         </scene>
         <!--Notes-->
         <scene sceneID="utr-8z-dZ2">
@@ -460,6 +488,7 @@
         <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <image name="person.and.person.fill" catalog="system" width="128" height="81"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <image name="quote.bubble" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -468,6 +497,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
