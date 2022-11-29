@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742D8CE5293699C700E7FB8F /* BreakingBad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 742D8CE3293699C700E7FB8F /* BreakingBad.xcdatamodeld */; };
+		742D8CE729369B2E00E7FB8F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D8CE629369B2E00E7FB8F /* CoreDataManager.swift */; };
 		74486D9329353FDC009DB2A6 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74486D9229353FDC009DB2A6 /* NotesViewController.swift */; };
 		74486D9529354800009DB2A6 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74486D9429354800009DB2A6 /* AddNoteViewController.swift */; };
 		7480ACF8292D4BD8007068AA /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		742D8CE4293699C700E7FB8F /* BreakingBad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakingBad.xcdatamodel; sourceTree = "<group>"; };
+		742D8CE629369B2E00E7FB8F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		74486D9229353FDC009DB2A6 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		74486D9429354800009DB2A6 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		7480ACF6292D4BD8007068AA /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				74A0DCDD292C2297000CFEDE /* Assets.xcassets */,
 				74A0DCDF292C2297000CFEDE /* LaunchScreen.storyboard */,
 				74A0DCE2292C2297000CFEDE /* Info.plist */,
+				742D8CE3293699C700E7FB8F /* BreakingBad.xcdatamodeld */,
 			);
 			path = BreakingBadApp;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				74A0DCEF292C24FA000CFEDE /* NetworkManager.swift */,
+				742D8CE629369B2E00E7FB8F /* CoreDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				74D1511E292EAA3D00292C31 /* QuoteViewController.swift in Sources */,
 				7491362529324DFF0020785E /* EpisodeDetails.swift in Sources */,
+				742D8CE5293699C700E7FB8F /* BreakingBad.xcdatamodeld in Sources */,
 				74D15118292E8EB700292C31 /* CharacterDetailViewController.swift in Sources */,
 				7480ACF8292D4BD8007068AA /* CharacterViewCell.swift in Sources */,
 				74486D9329353FDC009DB2A6 /* NotesViewController.swift in Sources */,
@@ -269,6 +276,7 @@
 				74A0DCD5292C2297000CFEDE /* AppDelegate.swift in Sources */,
 				74A0DCE9292C24B2000CFEDE /* EpisodesViewController.swift in Sources */,
 				74A0DCD7292C2297000CFEDE /* SceneDelegate.swift in Sources */,
+				742D8CE729369B2E00E7FB8F /* CoreDataManager.swift in Sources */,
 				74A0DCF2292C26CD000CFEDE /* CharacterModel.swift in Sources */,
 				74A0DCF6292C2B84000CFEDE /* QuoteModel.swift in Sources */,
 				74A0DCF4292C280D000CFEDE /* ErrorModel.swift in Sources */,
@@ -537,6 +545,19 @@
 			productName = SwiftAlertView;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		742D8CE3293699C700E7FB8F /* BreakingBad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				742D8CE4293699C700E7FB8F /* BreakingBad.xcdatamodel */,
+			);
+			currentVersion = 742D8CE4293699C700E7FB8F /* BreakingBad.xcdatamodel */;
+			path = BreakingBad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 74A0DCC9292C2296000CFEDE /* Project object */;
 }

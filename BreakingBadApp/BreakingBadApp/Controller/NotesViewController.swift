@@ -10,13 +10,22 @@ import UIKit
 class NotesViewController: UIViewController {
 
     @IBOutlet weak var noteTableView: UITableView!
-    
+    var notes = [Note]()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButton()
         noteTableView.delegate = self
         noteTableView.dataSource = self
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        fetchNotes()
+        print(notes[0].noteText)
+        noteTableView.reloadData()
+    }
+    
+    func fetchNotes(){
+        notes = CoreDataManager.shared.getNote()
     }
     
     func configureButton(){
@@ -46,12 +55,13 @@ class NotesViewController: UIViewController {
 
 extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "hello"
+        let cell = noteTableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
+        cell.textLabel?.text = notes[indexPath.row].episode
+        cell.detailTextLabel?.text = notes[indexPath.row].season
         return cell
     }
     
