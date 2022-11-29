@@ -26,7 +26,7 @@ IMDB Sayfası &#x2611;
 
 </div>
 
-<img  alt="first" src = "https://github.com/Vakifbank-IOS-Swift-Patika-Bootcamp/fourth-week-homework-Furkansarip/blob/main/screenshots/bbfst.png">
-<img  alt="first" src = "https://github.com/Vakifbank-IOS-Swift-Patika-Bootcamp/fourth-week-homework-Furkansarip/blob/main/screenshots/bbsct.png">
+<img  alt="first" src = "https://github.com/Furkansarip/BreakingBadApp/blob/main/screenshots/bbfst.png">
+<img  alt="second" src = "https://github.com/Furkansarip/BreakingBadApp/blob/main/screenshots/bbsct.png">
 
 
