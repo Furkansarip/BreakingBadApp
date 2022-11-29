@@ -20,7 +20,6 @@ class NotesViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchNotes()
-        print(notes[0].noteText)
         noteTableView.reloadData()
     }
     

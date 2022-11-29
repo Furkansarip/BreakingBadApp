@@ -499,7 +499,7 @@
         <scene sceneID="utr-8z-dZ2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z1w-GJ-VnV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notes" selectedImage="note.text.badge.plus" catalog="system" id="LHN-Hz-TDl"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="note.text.badge.plus" catalog="system" selectedImage="note.text.badge.plus" id="LHN-Hz-TDl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9J4-z0-aaQ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
