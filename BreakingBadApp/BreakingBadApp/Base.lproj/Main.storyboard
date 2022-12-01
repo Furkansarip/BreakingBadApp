@@ -400,7 +400,7 @@
         <!--Create a Note-->
         <scene sceneID="w0Y-Op-44L">
             <objects>
-                <viewController id="F6f-Bq-Gfs" customClass="AddNoteViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNoteViewController" id="F6f-Bq-Gfs" customClass="AddNoteViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nau-Ia-Hvk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

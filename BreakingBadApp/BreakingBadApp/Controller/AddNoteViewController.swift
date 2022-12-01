@@ -8,8 +8,8 @@
 import UIKit
 import SwiftAlertView
 
-class AddNoteViewController: UIViewController {
 
+class AddNoteViewController: UIViewController {
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var episodeTextField: UITextField!
     @IBOutlet weak var seasonTextField: UITextField!
@@ -17,9 +17,16 @@ class AddNoteViewController: UIViewController {
     let seasonPicker = UIPickerView()
     let episodePicker = UIPickerView()
     var episodes = [EpisodesModel]()
-    var seasons = ["Season1","Season2","Season3","Season4","Season5"]
+    var filteredEpisodes = [EpisodesModel]()
+    var seasons = ["Season 1","Season 2","Season 3","Season 4","Season 5"]
+    var viewTitle = "Create a Note"
+    var buttonTitle = "Add Note"
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNoteButton.setTitle(buttonTitle, for: .normal)
+        self.title = viewTitle
+        
         NetworkManager.shared.getAllEpisodes(series: "Breaking+Bad") { result in
             switch result {
             case.success(let episodes):
@@ -28,6 +35,8 @@ class AddNoteViewController: UIViewController {
                 print(error)
             }
         }
+        
+        episodeTextField.isEnabled = false
         seasonPicker.delegate = self
         seasonPicker.dataSource = self
         episodePicker.delegate = self
@@ -77,24 +86,49 @@ extension AddNoteViewController : UIPickerViewDelegate,UIPickerViewDataSource {
         if pickerView == seasonPicker {
             return seasons.count
         } else {
-            return episodes.count
+            return filteredEpisodes.count
         }
         
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == seasonPicker {
-            return seasons[row]
+            let type = SectionType(rawValue: row)
+            switch type {
+            case .season1:
+                filteredEpisodes = episodes.filter({$0.season == "1"})
+                return seasons[row]
+            case .season2:
+                filteredEpisodes = episodes.filter({$0.season == "2"})
+                return seasons[row]
+            case .season3:
+                filteredEpisodes = episodes.filter({$0.season == "3"})
+                return seasons[row]
+            case .season4:
+                filteredEpisodes = episodes.filter({$0.season == "4"})
+                return seasons[row]
+            case .season5:
+                filteredEpisodes = episodes.filter({$0.season == "5"})
+                return seasons[row]
+            default:
+                fatalError("Error")
+            }
+          
         } else {
-            return episodes[row].title
+            return filteredEpisodes[row].title
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == seasonPicker {
             seasonTextField.text = seasons[row]
+            if seasonTextField.text != "" {
+                episodeTextField.isEnabled = true
+            }
         } else {
-            episodeTextField.text = "Episode: \(row) \(episodes[row].title)"
+            episodeTextField.text = "Episode \(row+1) - \(filteredEpisodes[row].title)"
         }
     }
     
     
 }
+
+

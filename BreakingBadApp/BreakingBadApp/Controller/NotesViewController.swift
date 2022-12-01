@@ -8,9 +8,12 @@
 import UIKit
 
 class NotesViewController: UIViewController {
-
+    
     @IBOutlet weak var noteTableView: UITableView!
     var notes = [Note]()
+    var selectedEpisode = ""
+    var selectedSeason = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButton()
@@ -21,6 +24,7 @@ class NotesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         fetchNotes()
         noteTableView.reloadData()
+        
     }
     
     func fetchNotes(){
@@ -46,7 +50,9 @@ class NotesViewController: UIViewController {
                 floatingButton.addTarget(self, action: #selector(addNote), for: .touchUpInside)
     }
     @objc func addNote(){
-        performSegue(withIdentifier: "addNote", sender: nil)
+        
+       performSegue(withIdentifier: "addNote", sender: nil)
+        
     }
 
 
@@ -61,6 +67,8 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
         let cell = noteTableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         cell.textLabel?.text = notes[indexPath.row].episode
         cell.detailTextLabel?.text = notes[indexPath.row].season
+        selectedEpisode = notes[indexPath.row].episode!
+        selectedSeason = notes[indexPath.row].season!
         return cell
     }
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -80,10 +88,20 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
             }
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "addNote", sender: self)
+    }
     
-    
-    
-  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addNote" {
+            if let updateNote = segue.destination as? AddNoteViewController {
+                updateNote.viewTitle = "Update Note"
+                updateNote.buttonTitle = "Update"
+                
+            }
+        }
+    }
     
     
 }
+
