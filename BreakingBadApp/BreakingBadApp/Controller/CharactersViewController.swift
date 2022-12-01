@@ -23,9 +23,7 @@ final class CharactersViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       /* SwiftAlertView.show(title: "Welcome",message:"Breaking Bad App ",buttonTitles: "OK") {
-            $0.style = .dark
-        }*/
+       
         indicator.startAnimating()
         indicatorSetup()
         getAllCharacters()//Network işlemimiz

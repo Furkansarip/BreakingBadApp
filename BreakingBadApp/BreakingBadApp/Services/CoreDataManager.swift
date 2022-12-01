@@ -11,9 +11,10 @@ import CoreData
 final class CoreDataManager {
     static let shared = CoreDataManager()
     let managedContext : NSManagedObjectContext!
-    private init(){
+    public init(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
+        
     }
     
     func saveNote(seasonName:String, episodeName:String, noteText:String) -> Note? {

@@ -63,6 +63,25 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
         cell.detailTextLabel?.text = notes[indexPath.row].season
         return cell
     }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let object = notes[indexPath.row]
+            CoreDataManager().managedContext.delete(object)
+            notes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            do {
+               try  CoreDataManager().managedContext.save()
+            } catch {
+                print("error")
+            }
+        }
+    }
+    
+    
     
   
     
