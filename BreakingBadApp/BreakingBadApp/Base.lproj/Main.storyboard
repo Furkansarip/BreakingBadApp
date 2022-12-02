@@ -389,8 +389,9 @@
                     <navigationItem key="navigationItem" title="Notes" id="DoU-lj-hSn"/>
                     <connections>
                         <outlet property="noteTableView" destination="27l-HH-80B" id="iKS-SS-NXL"/>
-                        <segue destination="F6f-Bq-Gfs" kind="show" identifier="addNote" id="RqA-IA-cuY"/>
+                        <segue destination="F6f-Bq-Gfs" kind="show" identifier="updateNote" id="RqA-IA-cuY"/>
                         <segue destination="B25-Qm-ABQ" kind="show" identifier="noteDetail" id="pV6-nk-5wM"/>
+                        <segue destination="F6f-Bq-Gfs" kind="show" identifier="addNote" id="Rcl-dZ-4ro"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc6-XW-s9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -515,6 +516,9 @@
             <point key="canvasLocation" x="-735.1145038167939" y="-30.281690140845072"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RqA-IA-cuY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="network" catalog="system" width="128" height="123"/>
         <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>

@@ -21,7 +21,8 @@ class AddNoteViewController: UIViewController {
     var seasons = ["Season 1","Season 2","Season 3","Season 4","Season 5"]
     var viewTitle = "Create a Note"
     var buttonTitle = "Add Note"
-   
+    var choosenEpisode = ""
+    var choosenSeason = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         addNoteButton.setTitle(buttonTitle, for: .normal)
@@ -35,7 +36,8 @@ class AddNoteViewController: UIViewController {
                 print(error)
             }
         }
-        
+        episodeTextField.text = choosenEpisode
+        seasonTextField.text = choosenSeason
         episodeTextField.isEnabled = false
         seasonPicker.delegate = self
         seasonPicker.dataSource = self
@@ -78,6 +80,8 @@ class AddNoteViewController: UIViewController {
 
 }
 extension AddNoteViewController : UIPickerViewDelegate,UIPickerViewDataSource {
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }

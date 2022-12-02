@@ -67,8 +67,7 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
         let cell = noteTableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         cell.textLabel?.text = notes[indexPath.row].episode
         cell.detailTextLabel?.text = notes[indexPath.row].season
-        selectedEpisode = notes[indexPath.row].episode!
-        selectedSeason = notes[indexPath.row].season!
+        
         return cell
     }
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -89,14 +88,24 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "addNote", sender: self)
+        selectedEpisode = notes[indexPath.row].episode!
+        selectedSeason = notes[indexPath.row].season!
+        performSegue(withIdentifier: "updateNote", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addNote" {
+        if segue.identifier == "updateNote" {
             if let updateNote = segue.destination as? AddNoteViewController {
                 updateNote.viewTitle = "Update Note"
                 updateNote.buttonTitle = "Update"
+                updateNote.choosenEpisode =  selectedEpisode
+                updateNote.choosenSeason = selectedSeason
+            }
+        }   else if segue.identifier == "addNote" {
+            if let addNote = segue.destination as? AddNoteViewController {
+                addNote.viewTitle = "Create a Note"
+                addNote.buttonTitle = "Add Note"
+                
                 
             }
         }
