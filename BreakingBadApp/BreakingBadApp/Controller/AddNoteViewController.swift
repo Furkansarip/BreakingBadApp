@@ -83,7 +83,7 @@ class AddNoteViewController: UIViewController {
                 noteModel?.season = seasonTextField.text
                 noteModel?.episode = episodeTextField.text
                 noteModel?.noteText = noteTextField.text
-                SwiftAlertView.show(title: "Succes",message:"Updated",buttonTitles: "OK") {
+                SwiftAlertView.show(title: "Succes",message:"\(noteModel?.episode ?? "") Updated",buttonTitles: "OK") {
                     $0.style = .dark
                 }
                 do {
