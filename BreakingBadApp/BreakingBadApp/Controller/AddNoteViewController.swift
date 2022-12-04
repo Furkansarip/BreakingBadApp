@@ -23,11 +23,12 @@ class AddNoteViewController: UIViewController {
     var buttonTitle = "Add Note"
     var choosenEpisode = ""
     var choosenSeason = ""
+    var noteModel : Note?
     override func viewDidLoad() {
         super.viewDidLoad()
         addNoteButton.setTitle(buttonTitle, for: .normal)
         self.title = viewTitle
-        
+        print(noteModel)
         NetworkManager.shared.getAllEpisodes(series: "Breaking+Bad") { result in
             switch result {
             case.success(let episodes):
@@ -64,16 +65,18 @@ class AddNoteViewController: UIViewController {
             }
     
 
-    @IBAction func addNote(_ sender: Any) {
+    @IBAction func addNote(_ sender: UIButton) {
         if seasonTextField.text != "" && episodeTextField.text != ""  {
             CoreDataManager.shared.saveNote(seasonName: seasonTextField.text!, episodeName: episodeTextField.text!, noteText:noteTextField.text!)
             navigationController?.popViewController(animated: true)
             dismiss(animated: true, completion: nil)
+            
         } else {
             SwiftAlertView.show(title: "Error",message:"Choose a season and episode",buttonTitles: "OK") {
                 $0.style = .dark
             }
         }
+        
         
 }
     

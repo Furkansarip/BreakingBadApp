@@ -13,7 +13,7 @@ class NotesViewController: UIViewController {
     var notes = [Note]()
     var selectedEpisode = ""
     var selectedSeason = ""
-    
+    var selectedNote : Note?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButton()
@@ -88,6 +88,7 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedNote = notes[indexPath.row]
         selectedEpisode = notes[indexPath.row].episode!
         selectedSeason = notes[indexPath.row].season!
         performSegue(withIdentifier: "updateNote", sender: self)
@@ -100,6 +101,7 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
                 updateNote.buttonTitle = "Update"
                 updateNote.choosenEpisode =  selectedEpisode
                 updateNote.choosenSeason = selectedSeason
+                updateNote.noteModel = selectedNote
             }
         }   else if segue.identifier == "addNote" {
             if let addNote = segue.destination as? AddNoteViewController {
