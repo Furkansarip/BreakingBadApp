@@ -31,7 +31,7 @@ class NotesViewController: UIViewController {
         notes = CoreDataManager.shared.getNote()
     }
     
-    func configureButton(){
+    func configureButton(){//floating button configure
         let floatingButton = UIButton()
                 floatingButton.setTitle("Add", for: .normal)
         floatingButton.backgroundColor = .systemPink
@@ -99,12 +99,12 @@ extension NotesViewController : UITableViewDelegate,UITableViewDataSource {
             if let updateNote = segue.destination as? AddNoteViewController {
                 updateNote.viewTitle = "Update Note"
                 updateNote.buttonTitle = "Update"
-                updateNote.choosenEpisode =  selectedEpisode
-                updateNote.choosenSeason = selectedSeason
+                updateNote.status = true
                 updateNote.noteModel = selectedNote
             }
         }   else if segue.identifier == "addNote" {
             if let addNote = segue.destination as? AddNoteViewController {
+                addNote.status = false
                 addNote.viewTitle = "Create a Note"
                 addNote.buttonTitle = "Add Note"
                 

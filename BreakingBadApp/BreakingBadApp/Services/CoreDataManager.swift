@@ -32,6 +32,7 @@ final class CoreDataManager {
         }
         return nil
     }
+   
     
     func getNote() -> [Note] {
        let fetch = NSFetchRequest<NSManagedObject>(entityName: "Note")

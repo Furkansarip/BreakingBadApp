@@ -322,22 +322,6 @@
             </objects>
             <point key="canvasLocation" x="-726" y="635"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ehS-fe-Gvk">
-            <objects>
-                <viewController id="B25-Qm-ABQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aLX-Xc-WJc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="GEs-sF-4cI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="W46-bP-AlY"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10W-sN-Da1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="131" y="327"/>
-        </scene>
         <!--Notes-->
         <scene sceneID="LlB-vS-2me">
             <objects>
@@ -390,7 +374,6 @@
                     <connections>
                         <outlet property="noteTableView" destination="27l-HH-80B" id="iKS-SS-NXL"/>
                         <segue destination="F6f-Bq-Gfs" kind="show" identifier="updateNote" id="RqA-IA-cuY"/>
-                        <segue destination="B25-Qm-ABQ" kind="show" identifier="noteDetail" id="pV6-nk-5wM"/>
                         <segue destination="F6f-Bq-Gfs" kind="show" identifier="addNote" id="Rcl-dZ-4ro"/>
                     </connections>
                 </viewController>

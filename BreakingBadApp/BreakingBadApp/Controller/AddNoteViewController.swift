@@ -21,14 +21,32 @@ class AddNoteViewController: UIViewController {
     var seasons = ["Season 1","Season 2","Season 3","Season 4","Season 5"]
     var viewTitle = "Create a Note"
     var buttonTitle = "Add Note"
-    var choosenEpisode = ""
-    var choosenSeason = ""
     var noteModel : Note?
+    var status = false
     override func viewDidLoad() {
         super.viewDidLoad()
         addNoteButton.setTitle(buttonTitle, for: .normal)
         self.title = viewTitle
-        print(noteModel)
+        if status { //Update durumu true ise valueları doldur değil ise yeni bir note eklenecek anlamına gelir.
+            episodeTextField.text = noteModel?.episode
+            seasonTextField.text = noteModel?.season
+            noteTextField.text = noteModel?.noteText
+            episodeTextField.isEnabled = true // Update ekranında sezon seçili olduğu için aktif olmasında sakınca yok.
+        } else {
+            episodeTextField.isEnabled = false // Kullanıcı sezon seçmeden bölümlere erişemez.
+        }
+        getEpisodes()
+        
+        seasonPicker.delegate = self
+        seasonPicker.dataSource = self
+        episodePicker.delegate = self
+        episodePicker.dataSource = self
+        seasonTextField.inputView = seasonPicker
+        episodeTextField.inputView = episodePicker
+        createToolbar()
+    }
+    
+    func getEpisodes(){
         NetworkManager.shared.getAllEpisodes(series: "Breaking+Bad") { result in
             switch result {
             case.success(let episodes):
@@ -37,16 +55,6 @@ class AddNoteViewController: UIViewController {
                 print(error)
             }
         }
-        episodeTextField.text = choosenEpisode
-        seasonTextField.text = choosenSeason
-        episodeTextField.isEnabled = false
-        seasonPicker.delegate = self
-        seasonPicker.dataSource = self
-        episodePicker.delegate = self
-        episodePicker.dataSource = self
-        seasonTextField.inputView = seasonPicker
-        episodeTextField.inputView = episodePicker
-        createToolbar()
     }
     func createToolbar(){
                 let toolbar = UIToolbar()
@@ -66,10 +74,25 @@ class AddNoteViewController: UIViewController {
     
 
     @IBAction func addNote(_ sender: UIButton) {
-        if seasonTextField.text != "" && episodeTextField.text != ""  {
-            CoreDataManager.shared.saveNote(seasonName: seasonTextField.text!, episodeName: episodeTextField.text!, noteText:noteTextField.text!)
-            navigationController?.popViewController(animated: true)
-            dismiss(animated: true, completion: nil)
+        if seasonTextField.text != "" && episodeTextField.text != ""  {//Değerlerden biri boş ise kayıt işlemini yapamaz.
+            if sender.titleLabel?.text == "Add Note" {
+                CoreDataManager.shared.saveNote(seasonName: seasonTextField.text!, episodeName: episodeTextField.text!, noteText:noteTextField.text!)
+                navigationController?.popViewController(animated: true)
+                dismiss(animated: true, completion: nil)
+            } else {// Update note kısmı
+                noteModel?.season = seasonTextField.text
+                noteModel?.episode = episodeTextField.text
+                noteModel?.noteText = noteTextField.text
+                do {
+                    try CoreDataManager.shared.managedContext.save()
+                    navigationController?.popViewController(animated: true)
+                    dismiss(animated: true, completion: nil)
+                } catch {
+                    print("error")
+                }
+                
+            }
+            
             
         } else {
             SwiftAlertView.show(title: "Error",message:"Choose a season and episode",buttonTitles: "OK") {
@@ -98,7 +121,7 @@ extension AddNoteViewController : UIPickerViewDelegate,UIPickerViewDataSource {
         
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == seasonPicker {
+        if pickerView == seasonPicker { //Seçilen sezona göre bölümleri filtreleyebiliriz.
             let type = SectionType(rawValue: row)
             switch type {
             case .season1:
