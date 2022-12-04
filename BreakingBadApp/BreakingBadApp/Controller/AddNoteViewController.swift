@@ -83,6 +83,9 @@ class AddNoteViewController: UIViewController {
                 noteModel?.season = seasonTextField.text
                 noteModel?.episode = episodeTextField.text
                 noteModel?.noteText = noteTextField.text
+                SwiftAlertView.show(title: "Succes",message:"Updated",buttonTitles: "OK") {
+                    $0.style = .dark
+                }
                 do {
                     try CoreDataManager.shared.managedContext.save()
                     navigationController?.popViewController(animated: true)
