@@ -19,7 +19,6 @@ struct NetworkManager {
                 completion(.failure(.invalidURL))
                 return
             }
-        
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 if let _ = error {
                     completion(.failure(.unableToComplete))
